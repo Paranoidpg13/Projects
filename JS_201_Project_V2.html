@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JS 201 Pokemon Project</title>
 </head>
 <style>
 * {
@@ -65,12 +65,15 @@ position:relative;
     font-size: 50px
 
 }
-.image_bund {
-    width: 30px;
-    height: 30px;
+.image_bund .image{
+    width: 100px;
+    height: 100px;
     border-radius: 20%;
+    background-color: darkgrey;
     position: absolute;
     right: 200px;
+    right: -25px;
+    margin: 20px;
 }
 
 
@@ -85,8 +88,8 @@ position:relative;
             <p>Catch Pokemon</p>
         </button>
         <div class="tri">
-            <div class="image_bund">
-                <img class="image" id="pic" src="" alt="Not Available">
+            <div class="image_bund" id="pic">
+                <img class="image" src="" alt="Not Available">
             </div>
         </div>
         
