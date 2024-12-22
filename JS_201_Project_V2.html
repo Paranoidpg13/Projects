@@ -71,7 +71,6 @@ position:relative;
     border-radius: 20%;
     background-color: darkgrey;
     position: absolute;
-    right: 200px;
     right: -25px;
     margin: 20px;
 }
@@ -144,6 +143,7 @@ position:relative;
                     let pokeName = pokemon['name'];
                     let pokeHeight = pokemon['height'];
                     let pokeWeight = pokemon['weight'];
+                    let newPokeWeight = pokeWeight/10;
             
                     document.getElementById('name_').innerHTML = `${pokeName}`
 
@@ -160,7 +160,7 @@ position:relative;
                     0.${pokeHeight}  m `
                     }
                     document.getElementById('kilograms').innerHTML = `
-                    ${pokeWeight} hectograms `
+                    ${newPokeWeight} kg `
 
                     thisImage.src = pokemon['sprites']['other']['official-artwork']['front_default']
 
