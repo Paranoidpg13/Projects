@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Character Generator</title>
+</head>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+.SW_overarch {
+    /* display: flex;
+    flex-wrap: wrap; */
+    margin-left: 500px;
+}
+h1 {
+    text-align: left center;
+ 
+}
+.name_box {
+    width: 300px;
+    height: 150px;
+    display: block;
+    border: 2px solid black;
+}
+.image_box, .img_ {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+}
+.bn_box {
+    width: 300px;
+    height: 150px;
+    border: 2px solid black;
+}
+.bn {
+    width: 250px;
+    height: 100px;
+    margin: 10px 20px;
+    font-size: 30px;
+}
+.name {
+    font-size: 50px;
+}
+</style>
+
+
+
+
+<body>
+    
+<!-- show name and image of star wars character -->
+
+
+<div class="SW_overarch">
+    <h1>Random Star Wars Character Generator</h1>
+    
+    <div class="name_box">
+        Name:
+        <div class="name"></div>
+    </div>
+
+    <div class="image_box">
+        <img src="" alt="Not Available" class="img_">
+    </div>
+
+    <div class="bn_box">
+        <button class="bn"> Your Character </button>
+    </div>
+
+
+
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+       $(document).ready(function() {
+            // let thisImage = document.querySelector(".img_")
+            // let thisButton = document.querySelector(".bn")
+            $thisImage = $(".img_");
+            $thisButton = $(".bn");
+
+            $(document).on("click", $thisButton, function() {
+
+            const randNum = Math.ceil(Math.random()*88);
+            console.log(randNum);
+            
+            $.get(`https://akabab.github.io/starwars-api/api/id/${randNum}.json`, function(character) {
+                    console.log(character);
+                    $(".name").text(character['name']);
+                    $thisImage.attr('src', character['image']);
+                })
+
+            })
+
+       }) 
+        
+
+
+
+    </script>
+</body>
+</html>
